@@ -1,0 +1,102 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: url('/img/tecosysin_logo.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #333;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #c8128e;
+    font-size: 50px;
+    margin-bottom: 30px;
+}
+
+h2 {
+    color: #333;
+    border-bottom: 2px solid #4CAF50;
+    padding-bottom: 10px;
+    cursor: pointer;
+}
+
+h3 {
+    color: #555;
+    margin-top: 20px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 5px;
+}
+
+.balance-sheet {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.section {
+    background-color: #fafafa;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.section.summary {
+    grid-column: span 2;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+    position: relative;
+}
+
+label[title]::after {
+    content: 'ℹ';
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 16px;
+    color: #4CAF50;
+    cursor: pointer;
+}
+
+.input-field, .output-field {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.input-field:focus, .output-field:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
+
+.output-field {
+    background-color: #e9e9e9;
+}
+
+.content {
+    display: none;
+}
+
+@media (max-width: 600px) {
+    .balance-sheet {
+        grid-template-columns: 1fr;
+    }
+
+    .section.summary {
+        grid-column: 1;
+    }
+}

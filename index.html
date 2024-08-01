@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Balance Sheet</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Tecosys Balance Sheet</h1>
+        <div class="balance-sheet">
+            <div class="section">
+                <h2 onclick="toggleSection('assets')">Assets</h2>
+                <div id="assets" class="content">
+                    <div class="category">
+                        <h3>Current Assets</h3>
+                        <label for="cash" title="Cash in hand and in the bank">Cash:</label>
+                        <input type="number" id="cash" class="input-field" oninput="calculateTotal()"><br>
+                        <label for="accountsReceivable" title="Money owed by customers">Accounts Receivable:</label>
+                        <input type="number" id="accountsReceivable" class="input-field" oninput="calculateTotal()"><br>
+                        <label for="inventory" title="Goods available for sale">Inventory:</label>
+                        <input type="number" id="inventory" class="input-field" oninput="calculateTotal()"><br>
+                    </div>
+                    <div class="category">
+                        <h3>Non-Current Assets</h3>
+                        <label for="propertyPlantEquipment" title="Long-term physical assets">Property, Plant, and Equipment:</label>
+                        <input type="number" id="propertyPlantEquipment" class="input-field" oninput="calculateTotal()"><br>
+                        <label for="intangibleAssets" title="Non-physical assets like patents">Intangible Assets:</label>
+                        <input type="number" id="intangibleAssets" class="input-field" oninput="calculateTotal()"><br>
+                    </div>
+                    <label for="totalAssets">Total Assets:</label>
+                    <input type="number" id="totalAssets" class="output-field" readonly><br>
+                </div>
+            </div>
+            <div class="section">
+                <h2 onclick="toggleSection('liabilities')">Liabilities</h2>
+                <div id="liabilities" class="content">
+                    <div class="category">
+                        <h3>Current Liabilities</h3>
+                        <label for="accountsPayable" title="Money owed to suppliers">Accounts Payable:</label>
+                        <input type="number" id="accountsPayable" class="input-field" oninput="calculateTotal()"><br>
+                        <label for="shortTermDebt" title="Debts due within a year">Short-Term Debt:</label>
+                        <input type="number" id="shortTermDebt" class="input-field" oninput="calculateTotal()"><br>
+                    </div>
+                    <div class="category">
+                        <h3>Non-Current Liabilities</h3>
+                        <label for="longTermDebt" title="Debts due after a year">Long-Term Debt:</label>
+                        <input type="number" id="longTermDebt" class="input-field" oninput="calculateTotal()"><br>
+                    </div>
+                    <label for="totalLiabilities">Total Liabilities:</label>
+                    <input type="number" id="totalLiabilities" class="output-field" readonly><br>
+                </div>
+            </div>
+            <div class="section">
+                <h2 onclick="toggleSection('equity')">Equity</h2>
+                <div id="equity" class="content">
+                    <label for="commonStock" title="Value of issued shares">Common Stock:</label>
+                    <input type="number" id="commonStock" class="input-field" oninput="calculateTotal()"><br>
+                    <label for="retainedEarnings" title="Accumulated profits">Retained Earnings:</label>
+                    <input type="number" id="retainedEarnings" class="input-field" oninput="calculateTotal()"><br>
+                    <label for="totalEquity">Total Equity:</label>
+                    <input type="number" id="totalEquity" class="output-field" readonly><br>
+                </div>
+            </div>
+            <div class="section summary">
+                <h2>Summary</h2>
+                <div class="content">
+                    <label for="totalLiabilitiesAndEquity">Total Liabilities and Equity:</label>
+                    <input type="number" id="totalLiabilitiesAndEquity" class="output-field" readonly><br>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
